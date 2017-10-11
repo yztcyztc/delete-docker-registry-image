@@ -393,7 +393,9 @@ def main():
 
         if args.prune:
             cleaner.prune()
+        print('ok')
     except RegistryCleanerError as error:
+        print('error')
         logger.fatal(error)
         sys.exit(1)
 
