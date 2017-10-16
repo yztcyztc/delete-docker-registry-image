@@ -1,3 +1,8 @@
+# imagedel
+
+    curl https://raw.githubusercontent.com/yztcyztc/delete-docker-registry-image/master/imagedel.py | sudo tee /usr/local/bin/imagedel >/dev/null
+    sudo chmod a+x /usr/local/bin/delete_docker_registry_image
+
 # delete-docker-registry-image
 
 ## Install
