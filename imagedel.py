@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 from flask import Flask
@@ -30,7 +30,7 @@ def dry():
     if request.form.get('password',-1)=='p':
         image=request.form['image']
         tag = request.form.get('tag',-1)
-        log.info('image:%s  tag:%s',image,tag)
+        log.info('DRY_param:[Image:%s  Tag:%s]',image,tag)
         if tag==-1 :
             print('delete respoitory')
             re=os.popen('delete_docker_registry_image --image %s -p --dry-run' % image).read()
@@ -46,7 +46,7 @@ def delete():
     if request.form.get('password',-1)=='p':
         image=request.form['image']
         tag = request.form.get('tag',-1)
-        log.info('image:%s  tag:%s', image, tag)
+        log.info('DELTET_param:[Image:%s  Tag:%s]', image, tag)
         if tag==-1 :
             print('delete respoitory')
             re=os.popen('delete_docker_registry_image --image %s -p' % image).read()
@@ -58,7 +58,7 @@ def delete():
 
 if __name__ == '__main__':
     handler = logging.StreamHandler()
-    handler.setFormatter(logging.Formatter(u'%(levelname)-8s [%(asctime)s]  %(message)s'))
+    handler.setFormatter(logging.Formatter('%(levelname)s - [%(asctime)s] - %(message)s'))
     log.addHandler(handler)
     log.setLevel(logging.INFO)
     app.run(host='0.0.0.0',port='7777')
