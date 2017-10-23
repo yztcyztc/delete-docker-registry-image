@@ -1,6 +1,6 @@
 # registry_gc
 
-    curl https://raw.githubusercontent.com/yztcyztc/delete-docker-registry-image/master/registry_gc.py | sudo tee /usr/local/bin/imagedel >/dev/null
+    curl https://raw.githubusercontent.com/yztcyztc/delete-docker-registry-image/master/registry_gc.py | sudo tee /usr/local/bin/registry_gc >/dev/null
     sudo chmod a+x /usr/local/bin/registry_gc
 
 # imagedel
