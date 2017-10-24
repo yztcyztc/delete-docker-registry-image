@@ -34,6 +34,7 @@ def dry():
         print('Start GC --dry')
         name=request.form.get('name',registry_name)
         re=os.popen('docker exec %s /bin/registry garbage-collect --dry-run /etc/docker/registry/config.yml' % name).read()
+        log.info(re)
         log.info('End GC --dry')
         return re
     return '<h3>Bad password.</h3>'
@@ -46,6 +47,7 @@ def delete():
         print('Start GC --dry')
         name=request.form.get('name',registry_name)
         re=os.popen('docker exec %s /bin/registry garbage-collect --dry-run /etc/docker/registry/config.yml' % name).read()
+        log.info(re)
         log.info('End GC')
         return re
     return '<h3>Bad password.</h3>'
